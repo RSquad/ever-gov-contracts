@@ -1,0 +1,32 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+class VotingWallet {
+  +<b>{field}_addrRoot: address
+  +{field}_addrTokenRoot: address
+  +{field}_addrTokenWallet: address
+  +{field}_proposals: mapping(address => uint128)
+  +{field}_proposalsCount: uint128
+  +{field}_requestedVotes: uint128
+  +{field}_totalVotes: uint128
+  +{field}_lockedVotes: uint128
+  -{field}_returnTo: address
+  ..initialData..
+  +{static}_addrOwner: address
+  --
+  +constructor(addrTokenRoot: address)
+  +notifyWalletDeployed(wallet: address)
+  +reclaim(votes: uint128, returnTo: address)
+  +updateLockedVotes()
+  -_transferRequestedVotes()
+  -_queryProposalStatuses()
+  -_updateLockedVotes()
+}
+@enduml

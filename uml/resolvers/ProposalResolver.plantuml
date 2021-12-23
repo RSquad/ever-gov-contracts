@@ -1,0 +1,22 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+class ProposalResolver {
+    -{field}_codeProposal: TvmCell
+    --
+    -_buildProposalCode(addrRoot: address): TvmCell
+    -_buildProposalState(addrRoot: address, id: uint32): TvmCell
+    ..getters..
+    +resolveProposal(addrRoot: address, id: uint32): address
+    +resolveCodeHashProposal(addrRoot: address): uint256
+}
+
+@enduml

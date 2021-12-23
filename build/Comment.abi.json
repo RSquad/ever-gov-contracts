@@ -1,0 +1,94 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"addrAuthor","type":"address"},
+				{"name":"addrReply","type":"address"},
+				{"name":"content","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getPublic",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"addrProposal","type":"address"},
+				{"name":"addrAuthor","type":"address"},
+				{"name":"addrReply","type":"address"},
+				{"name":"id","type":"uint32"},
+				{"name":"createdAt","type":"uint32"},
+				{"name":"content","type":"string"}
+			]
+		},
+		{
+			"name": "_addrProposal",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_addrProposal","type":"address"}
+			]
+		},
+		{
+			"name": "_addrAuthor",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_addrAuthor","type":"address"}
+			]
+		},
+		{
+			"name": "_addrReply",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_addrReply","type":"address"}
+			]
+		},
+		{
+			"name": "_id",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_id","type":"uint32"}
+			]
+		},
+		{
+			"name": "_createdAt",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_createdAt","type":"uint32"}
+			]
+		},
+		{
+			"name": "_content",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_content","type":"string"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_id","type":"uint32"}
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_addrProposal","type":"address"},
+		{"name":"_addrAuthor","type":"address"},
+		{"name":"_addrReply","type":"address"},
+		{"name":"_id","type":"uint32"},
+		{"name":"_createdAt","type":"uint32"},
+		{"name":"_content","type":"string"}
+	]
+}

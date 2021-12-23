@@ -1,0 +1,39 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+package SmvRootPackage {
+
+  !include ../smc/Checks.plantuml
+  !include ../smc/SmvRoot.plantuml
+
+  !include ../interfaces/ISmvRoot.plantuml
+  !include ../interfaces/ISmvRootStoreCb.plantuml
+
+  !include ../resolvers/VotingWalletResolver.plantuml
+  !include ../resolvers/ProposalResolver.plantuml
+
+
+  SmvRoot .[#blue,thickness=4]|> ISmvRoot
+  SmvRoot -[#green,thickness=5]|> VotingWalletResolver
+  SmvRoot -[#green,thickness=5]|> ProposalResolver
+  SmvRoot .[#blue,thickness=4]|> ISmvRootStoreCb
+  SmvRoot -[#green,thickness=5]|> Checks
+}
+
+' together {
+'   !include ../structs/SmvRootStructs.plantuml
+'   !include ../libraries/Fees.plantuml
+'   !include ../libraries/Errors.plantuml
+' }
+' SmvRoot -down-> SmvRootStructs
+' SmvRoot -down-> Fees
+' SmvRoot -down-> Errors
+
+@enduml

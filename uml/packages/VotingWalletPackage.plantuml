@@ -1,0 +1,29 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+package VotingWalletPackage {
+  !include ../interfaces/IVotingWallet.plantuml
+  !include ../interfaces/ITokensReceivedCallback.plantuml
+  !include ../smc/VotingWallet.plantuml
+
+  VotingWallet .[#blue,thickness=4]|> IVotingWallet
+  VotingWallet .[#blue,thickness=4]|> ITokensReceivedCallback
+}
+
+' together {
+'   !include ../structs/ProposalStructs.plantuml
+'   !include ../libraries/Fees.plantuml
+'   !include ../libraries/Errors.plantuml
+' }
+' VotingWallet -down-> ProposalStructs
+' VotingWallet -down-> Fees
+' VotingWallet -down-> Errors
+
+@enduml

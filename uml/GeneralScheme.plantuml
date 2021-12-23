@@ -1,0 +1,41 @@
+@startuml GeneralScheme
+title GeneralScheme
+
+hide class empty members
+skinparam componentStyle uml2
+
+
+package DGO {
+
+  !include smc/RootTokenContract.plantuml
+  !include smc/TONTokenWallet.plantuml
+
+  !include smc/SmvRootStore.plantuml
+
+  !include smc/SmvRoot.plantuml
+  !include smc/VotingWallet.plantuml
+
+  !include smc/Comment.plantuml
+  !include smc/Proposal.plantuml
+
+
+  SmvRootStore <-down- SmvRoot
+  
+  SmvRootStore <-left- Proposal
+
+  SmvRoot <-up-> Proposal
+
+  SmvRoot <-up-> VotingWallet
+
+  SmvRoot -up-> RootTokenContract
+
+  VotingWallet <--> Proposal
+  VotingWallet <--> TONTokenWallet
+
+  Proposal <--> Comment
+
+  RootTokenContract <-> TONTokenWallet
+
+}
+
+@enduml

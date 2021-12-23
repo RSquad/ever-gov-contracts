@@ -1,0 +1,31 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+class SmvRoot {
+  +{field}_version: uint16
+  +{field}_deployedVotingWalletsCounter: uint32
+  +{field}_deployedProposalsCounter: uint32
+  +{field}_addrSmvStore: address
+  +{field}_addrTokenRoot: address
+  +{field}_title: string
+  +{field}_inited: bool
+  -{field}_pendingCallbackCounter: uint8
+  +{field}_pendingProposals: mapping(uint32 => PendingProposal)
+  --
+  +constructor(addrSmvStore: address, addrTokenRoot: address, title: string)
+  +getTotalGrantedCb(total_supply: uint128)
+  -_createChecks()
+  -_onInit()    
+  ..getters..
+  +getPublic(): uint32, uint32, uint16, address, address, bool, string
+}
+  
+
+@enduml

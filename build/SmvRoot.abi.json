@@ -1,0 +1,201 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"addrSmvStore","type":"address"},
+				{"name":"addrTokenRoot","type":"address"},
+				{"name":"title","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "updateCode",
+			"inputs": [
+				{"name":"kind","type":"uint8"},
+				{"name":"code","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployVotingWallet",
+			"inputs": [
+				{"name":"addrOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployProposal",
+			"inputs": [
+				{"name":"addrClient","type":"address"},
+				{"name":"title","type":"string"},
+				{"name":"description","type":"string"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTotalGrantedCb",
+			"inputs": [
+				{"name":"total_supply","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onProposalPassed",
+			"inputs": [
+				{"name":"id","type":"uint32"},
+				{"name":"addrClient","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onProposalNotPassed",
+			"inputs": [
+				{"name":"id","type":"uint32"},
+				{"name":"addrClient","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getPublic",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"deployedVotingWalletsCounter","type":"uint32"},
+				{"name":"deployedProposalsCounter","type":"uint32"},
+				{"name":"version","type":"uint16"},
+				{"name":"addrSmvStore","type":"address"},
+				{"name":"addrTokenRoot","type":"address"},
+				{"name":"inited","type":"bool"},
+				{"name":"title","type":"string"}
+			]
+		},
+		{
+			"name": "resolveCodeHashProposal",
+			"inputs": [
+				{"name":"addrRoot","type":"address"}
+			],
+			"outputs": [
+				{"name":"codeHashProposal","type":"uint256"}
+			]
+		},
+		{
+			"name": "resolveProposal",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"id","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"addrProposal","type":"address"}
+			]
+		},
+		{
+			"name": "resolveVotingWallet",
+			"inputs": [
+				{"name":"addrRoot","type":"address"},
+				{"name":"addrOwner","type":"address"}
+			],
+			"outputs": [
+				{"name":"addrVotingWallet","type":"address"}
+			]
+		},
+		{
+			"name": "_version",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_version","type":"uint16"}
+			]
+		},
+		{
+			"name": "_deployedVotingWalletsCounter",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_deployedVotingWalletsCounter","type":"uint32"}
+			]
+		},
+		{
+			"name": "_deployedProposalsCounter",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_deployedProposalsCounter","type":"uint32"}
+			]
+		},
+		{
+			"name": "_addrSmvStore",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_addrSmvStore","type":"address"}
+			]
+		},
+		{
+			"name": "_addrTokenRoot",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_addrTokenRoot","type":"address"}
+			]
+		},
+		{
+			"name": "_title",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_title","type":"string"}
+			]
+		},
+		{
+			"name": "_inited",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_inited","type":"bool"}
+			]
+		},
+		{
+			"name": "_pendingProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"addrClient","type":"address"},{"name":"addrChange","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"payload","type":"cell"}],"name":"_pendingProposals","type":"map(uint32,tuple)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_codeVotingWallet","type":"cell"},
+		{"name":"_codeProposal","type":"cell"},
+		{"name":"_checkList","type":"uint8"},
+		{"name":"_version","type":"uint16"},
+		{"name":"_deployedVotingWalletsCounter","type":"uint32"},
+		{"name":"_deployedProposalsCounter","type":"uint32"},
+		{"name":"_addrSmvStore","type":"address"},
+		{"name":"_addrTokenRoot","type":"address"},
+		{"name":"_title","type":"string"},
+		{"name":"_inited","type":"bool"},
+		{"name":"_pendingCallbackCounter","type":"uint8"},
+		{"components":[{"name":"addrClient","type":"address"},{"name":"addrChange","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"payload","type":"cell"}],"name":"_pendingProposals","type":"map(uint32,tuple)"}
+	]
+}

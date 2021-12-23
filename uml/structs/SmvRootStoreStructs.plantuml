@@ -1,0 +1,22 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+package SmvRootStoreStructs {
+
+  together {
+    enum ContractCode {
+      VotingWallet,
+      Proposal,
+      Comment
+    }
+  }
+}
+
+@enduml

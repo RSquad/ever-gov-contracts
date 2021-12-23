@@ -1,0 +1,24 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+  entity Errors {
+    uint16 INVALID_CALLER = 100
+    uint16 INVALID_VALUE = 101
+    uint16 INVALID_ARGUMENTS = 102
+    uint16 CONTRACT_INITED = 103
+
+    uint16 VOTING_WALLET_NOT_ENOUGH_VOTES = 200
+    uint16 VOTING_WALLET_INVALID_RETURN_ADDRESS = 201
+
+    uint16 PROPOSAL_VOTING_NOT_STARTED = 300
+    uint16 PROPOSAL_VOTING_HAS_ENDED = 301
+  }
+
+@enduml

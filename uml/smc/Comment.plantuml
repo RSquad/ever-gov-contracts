@@ -1,0 +1,26 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+class Comment {
+    +<b>{field}_addrProposal: address
+    +{field}_addrAuthor: address
+    +{field}_addrReply: address
+    +{field}_createdAt: uint32
+    +{field}_content: string
+
+    ..initialData..
+    +{static}_id: uint32
+    --
+    +constructor(addrAuthor: address, addrReply: address, content: string)
+    ..getters..
+    +getPublic(): address, address, address, uint32, uint32, string
+}
+
+@enduml

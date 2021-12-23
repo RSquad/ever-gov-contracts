@@ -1,0 +1,19 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+interface IVotingWallet {
+    +vote(addrProposal: address, choice: bool, votes: uint128)
+    +confirmVote(votes: uint128)
+    +rejectVote(votes: uint128)
+    +queryStatusCb(state: ProposalState)
+}
+
+@enduml

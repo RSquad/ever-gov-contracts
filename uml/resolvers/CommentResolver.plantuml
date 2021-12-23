@@ -1,0 +1,22 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+class CommentResolver {
+    -{field}_codeComment: TvmCell
+    --
+    -_buildCommentState(addrProposal: address, id: uint32): TvmCell
+    -_buildCommentCode(addrProposal: address): TvmCell
+    ..getters..
+    +resolveComment(addrProposal: address, id: uint32): address
+    +resolveCommentCodeHash(addrProposal: address): uint256
+}
+
+@enduml

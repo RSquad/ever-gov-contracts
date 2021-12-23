@@ -1,0 +1,57 @@
+@startuml AllSmc
+title Smart-contracts system
+
+
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+package DGO {
+
+  together {
+    !include packages/RootTokenContractPackage.plantuml
+    !include smc/RootTokenContract.plantuml
+    !include packages/TONTokenWalletPackage.plantuml
+    !include smc/TONTokenWallet.plantuml
+  }
+
+  together {
+    !include smc/Checks.plantuml
+    !include packages/SmvRootStorePackage.plantuml
+    !include smc/SmvRootStore.plantuml
+    !include resolvers/VotingWalletResolver.plantuml
+  }
+
+  together {
+    !include packages/SmvRootPackage.plantuml
+    !include smc/SmvRoot.plantuml
+    !include packages/VotingWalletPackage.plantuml
+    !include smc/VotingWallet.plantuml
+  }
+
+  together {
+    !include smc/Comment.plantuml
+    !include packages/ProposalPackage.plantuml
+    !include smc/Proposal.plantuml
+  }
+
+  SmvRootStore <-- SmvRoot
+  SmvRootStore <-- Proposal
+
+  SmvRoot <--> Proposal
+  SmvRoot <--> VotingWallet
+  SmvRoot --> RootTokenContract
+
+  VotingWallet <--> Proposal
+  VotingWallet <--> TONTokenWallet
+
+  ProposalPackage <--> Comment
+
+  RootTokenContract <-> TONTokenWallet
+}
+
+@enduml

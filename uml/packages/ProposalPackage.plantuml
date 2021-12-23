@@ -1,0 +1,40 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+package ProposalPackage {
+
+  !include ../smc/Proposal.plantuml
+  !include ../smc/Checks.plantuml
+  !include ../interfaces/IClient.plantuml
+  !include ../interfaces/IProposal.plantuml
+  !include ../interfaces/ISmvRootStoreCb.plantuml
+  !include ../resolvers/CommentResolver.plantuml
+  !include ../resolvers/VotingWalletResolver.plantuml
+
+  Proposal .[#blue,thickness=4]|> IProposal
+  Proposal .[#blue,thickness=4]|> ISmvRootStoreCb
+  Proposal -[#green,thickness=5]|> VotingWalletResolver
+  Proposal -[#green,thickness=5]|> CommentResolver
+  Proposal -[#green,thickness=5]|> Checks
+
+  Proposal -> IClient
+}
+
+' together {
+'   !include ../structs/ProposalStructs.plantuml
+'   !include ../libraries/Fees.plantuml
+'   !include ../libraries/Errors.plantuml
+' }
+' Proposal -down-> ProposalStructs
+' Proposal -down-> Fees
+' Proposal -down-> Errors
+
+@enduml

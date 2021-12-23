@@ -1,0 +1,18 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+interface ISmvRoot {
+    +deployVotingWallet(addrOwner: address)
+    +deployProposal(addrClient: address, title: string, description: string, payload: TvmCell)
+    +onProposalNotPassed(id: uint32, addrClient: address, payload: TvmCell)
+    +onProposalPassed(id: uint32, addrClient: address, payload: TvmCell)
+}
+
+@enduml

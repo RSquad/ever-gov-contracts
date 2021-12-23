@@ -1,0 +1,22 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+  entity Fees {
+    uint128 PROCESS_MIN = 0.1 ton
+    uint128 PROCESS_SM = 0.2 ton
+    uint128 PROCESS = 0.4 ton
+
+    uint128 DEPLOY_MIN = 1 ton
+    uint128 DEPLOY_SM = 2 ton
+    uint128 DEPLOY = 3 ton
+
+  }
+  
+@enduml

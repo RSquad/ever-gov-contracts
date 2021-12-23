@@ -1,0 +1,26 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+
+package SmvRootStorePackage {
+  !include ../interfaces/ISmvRootStore.plantuml
+  !include ../smc/SmvRootStore.plantuml
+
+  SmvRootStore .[#blue,thickness=4]|> ISmvRootStore
+}
+
+' together {
+'   !include ../libraries/Errors.plantuml
+'   !include ../structs/SmvRootStoreStructs.plantuml
+' }
+' SmvRootStore -down-> Errors
+' SmvRootStore -down-> SmvRootStoreStructs
+
+@enduml

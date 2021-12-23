@@ -1,0 +1,64 @@
+@startuml
+skinparam WrapWidth 600
+skinparam classAttributeIconSize 0
+' hide circle
+skinparam linetype ortho
+skinparam linetype polyline
+top to bottom direction
+left to right direction
+skinparam componentStyle uml2
+
+package ProposalStructs {
+
+  together {
+    entity ProposalResults {
+      +{field}completed: bool
+      +{field}passed: bool
+      +{field}votesFor: uint128
+      +{field}votesAgainst: uint128
+      +{field}totalVotes: uint256
+      +{field}model: VoteCountModel
+    }
+
+    entity ProposalData {
+      +{field}addr: address
+      +{field}title: string
+      +{field}description: string
+      +{field}payload: TvmCell
+      +{field}client: address
+      +{field}state: ProposalState
+      +{field}start: uint32
+      +{field}end: uint32
+      +{field}votesFor: uint128
+      +{field}votesAgainst: uint128
+      +{field}totalVotes: uint128
+      +{field}addrsVotingWallet: address[]
+      +{field}commentsCounter: uint32
+    }
+
+    enum VoteCountModel {
+      Undefined,
+      Majority,
+      SoftMajority,
+      SuperMajority,
+      Other,
+      Reserved,
+      Last
+    }
+
+    enum ProposalState {
+      Undefined,
+      New,
+      OnVoting,
+      Ended,
+      Passed,
+      NotPassed,
+      Finalized,
+      Distributed,
+      Reserved,
+      Last
+    }
+  }
+}
+
+@enduml
