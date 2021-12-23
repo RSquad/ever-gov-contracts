@@ -99,7 +99,7 @@ const f = async () => {
     input: {
       addrSmvStore: smcSmvRootStore.address,
       addrTokenRoot: smcTokenRoot.address,
-      title: utf8ToHex("smv_root_title"),
+      title: utf8ToHex("Test Evercale Governance 2"),
     },
   });
 

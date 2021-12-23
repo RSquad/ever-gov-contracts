@@ -35,7 +35,7 @@ contract SmvRoot is
             CHECK_VOTING_WALLET;
     }
 
-    uint16 public _version = 4;
+    uint16 public _version = 5;
 
     uint32 public _deployedVotingWalletsCounter = 0;
     uint32 public _deployedProposalsCounter = 0;

@@ -36,8 +36,8 @@ import { utf8ToHex } from "@rsquad/ton-utils/dist/convert";
     const nonce = new Date().getSeconds();
     const tokenRootInitialData = {
       _randomNonce: nonce,
-      name: utf8ToHex("name"),
-      symbol: utf8ToHex("symbol"),
+      name: utf8ToHex("SMV DAO Token"),
+      symbol: utf8ToHex("SDAO"),
       decimals: 0,
       wallet_code: (
         await client.boc.get_code_from_tvc({
